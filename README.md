@@ -1,2 +1,1 @@
-# darkness
-Concurrency library based on C++23
+## Concurrency library based on C++23
