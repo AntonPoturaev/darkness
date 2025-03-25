@@ -8,6 +8,7 @@
 /// @brief   Implementation of @class Queue
 
 #include "Queue.hpp"
+#include <Darkness/Common/ScopeExit.hpp>
 #include <Darkness/Common/Utilities.hpp>
 #include <Darkness/Concurrency/Utilities.hpp>
 #include <Darkness/Concurrency/QueueManager.hpp>

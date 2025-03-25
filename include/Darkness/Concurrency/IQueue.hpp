@@ -14,6 +14,7 @@
 #include <thread>
 #include <memory>
 #include <stop_token>
+#include <string>
 
 namespace Darkness::Concurrency {
     struct IQueue

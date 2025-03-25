@@ -10,6 +10,7 @@
 #include <Darkness/Concurrency/AsyncTimer.hpp>
 #include <Darkness/Concurrency/Utilities.hpp>
 #include <Darkness/Common/Utilities.hpp>
+#include <Darkness/Common/ScopeExit.hpp>
 
 #include <thread>
 #include <mutex>

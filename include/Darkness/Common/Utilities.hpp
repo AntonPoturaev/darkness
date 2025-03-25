@@ -28,27 +28,14 @@ namespace Darkness::Common {
 
     std::string MakeTraceExceptionMessage(std::string const& message) noexcept;
 
-    class ScopeExit final
-    {
-    public:
-        using tCompletion = std::function<void()>;
-
-    public:
-        explicit ScopeExit(tCompletion completion) noexcept;
-
-        ~ScopeExit();
-
-    private:
-        tCompletion const m_Completion;
-    };
-
     inline void HashCombine(std::size_t& seed) {}
 
     template<typename T, typename... Rest>
     void HashCombine(std::size_t& seed, T const& v, Rest&& ... rest)
     {
         constexpr std::hash<T> const hash {};
-        seed ^= hash(v) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
+        constexpr auto const magicValue = 0x9e3779b9;
+        seed ^= hash(v) + magicValue + (seed << 6) + (seed >> 2);
         (HashCombine(seed, std::forward<Rest>(rest)), ...);
     }
 } /// namespace Darkness::Common

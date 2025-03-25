@@ -128,17 +128,4 @@ namespace Darkness::Common {
     {
         return _MakeTraceExceptionMessage(message);
     }
-
-    ScopeExit::ScopeExit(tCompletion completion) noexcept
-        : m_Completion(std::move(completion))
-    {
-    }
-
-    ScopeExit::~ScopeExit()
-    {
-        if (m_Completion)
-        {
-            m_Completion();
-        }
-    }
 } /// namespace Darkness::Common
